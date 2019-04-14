@@ -1,0 +1,29 @@
+{% extends 'whichOne/base.html' %}
+{% block content %}
+{%for q in question_list%}
+<p>
+<h1>{{q.get_question_display}}</h1>
+
+{% if messages %}
+    {% for message in messages %}
+    <p><strong>{{ message }}</strong></p>
+    {%endfor %}
+{% endif %}
+
+{% if game_over %}<p><strong>{{ game_over }}</strong></p>{% endif %}
+{{ cookie 'try_lama'}}
+<div class="row justify-content-around ">
+    <form action="" class="form-inline" method = "POST">
+        {%csrf_token %}
+            <div class="col-4">
+                <input type="image" id="image" class="rounded" class="img-fluid" src="{{q.alpagaIMG.url }}" name="alpaga_choice" value="alpaga_choice">
+            </div>
+        <div class="col-4">
+            <input type="image" id="image" class="rounded" class="img-fluid" src="{{q.lamaIMG.url}}" name="lama_choice" value="lama_choice">
+        </div>
+        <input type="hidden" name="question" value="{{q.question}}" />
+    </form>
+</div>
+</p>
+{% endfor %}
+{% endblock %}
