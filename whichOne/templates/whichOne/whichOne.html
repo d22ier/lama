@@ -11,7 +11,6 @@
 {% endif %}
 
 {% if game_over %}<p><strong>{{ game_over }}</strong></p>{% endif %}
-{{ cookie 'try_lama'}}
 <div class="row justify-content-around ">
     <form action="" class="form-inline" method = "POST">
         {%csrf_token %}
