@@ -7,5 +7,5 @@ I used a bit bootstrap and I handle the cookie management directly with Django e
 
 
 # This project has just an education purpose for making test on Django framework.
-# Try to be regardless about the quality of the code. 
+Try to be regardless about the quality of the code. 
 
